@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import gitHubLogo from './assets/github-logo-transparent.png';
 
 export const App = () => {
   let defaultGqlEditorSchema: PassedSchema = {
@@ -46,6 +47,30 @@ export const App = () => {
         setSchema={setGqlEditorSchema}
         schema={gqlEditorSchema}
       />
+
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '10px',
+          left: '10px',
+          zIndex: 100
+        }}
+      >
+        {/* eslint-disable-next-line react/jsx-no-target-blank */}
+        <a
+          href={'https://github.com/Vadorequest/personal-graphql-editor'}
+          target={'_blank'}
+        >
+          <img
+            style={{
+              width: 20,
+              height: 20,
+            }}
+            src={gitHubLogo}
+            alt={'GitHub logo'}
+          />
+        </a>
+      </div>
     </div>
   );
 };
