@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2dd45933-6771-46f3-bbdc-fe48d39682da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +33,9 @@
     <property name="javascript.nodejs.core.library.configured.version" value="15.4.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -49,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615035089307</updated>
       <workItem from="1615035092520" duration="220000" />
+      <workItem from="1615035337361" duration="343000" />
     </task>
     <servers />
   </component>
