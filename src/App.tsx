@@ -1,43 +1,50 @@
 import { GraphQLEditor } from 'graphql-editor';
 import { PassedSchema } from 'graphql-editor/lib/Models';
-import React, { useState } from 'react';
-
-const schemas = {
-  pizza: `
-type Query{
-  pizzas: [Pizza!]
-}
-`,
-  pizzaLibrary: `
-type Pizza{
-  name: String
-}
-`,
-};
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
 export const App = () => {
-  const [mySchema, setMySchema] = useState<PassedSchema>({
-    code: schemas.pizza,
-    libraries: schemas.pizzaLibrary,
-  });
+  let defaultGqlEditorSchema: PassedSchema = {
+    code: '',
+    libraries: '',
+  };
+
+  try {
+    const gqlEditorSchema: string | null = localStorage.getItem('gqlEditorSchema');
+
+    if (gqlEditorSchema) {
+      defaultGqlEditorSchema = JSON.parse(gqlEditorSchema);
+      console.log('Schema loaded from local storage.');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  const [gqlEditorSchema, setGqlEditorSchema] = useState<PassedSchema>(defaultGqlEditorSchema);
+
+  useEffect(() => {
+    localStorage.setItem('gqlEditorSchema', JSON.stringify(gqlEditorSchema));
+    console.log('Schema saved to local storage.');
+  }, [gqlEditorSchema]);
+
+  console.log('gqlEditorSchema', gqlEditorSchema);
 
   return (
     <div
       style={{
         flex: 1,
-        width: '100%',
-        height: '100%',
+        width: '100vw',
+        height: '100vh',
         alignSelf: 'stretch',
         display: 'flex',
         position: 'relative',
       }}
     >
       <GraphQLEditor
-        // @ts-ignore
-        onSchemaChange={(props) => {
-          setMySchema(props);
-        }}
-        schema={mySchema}
+        setSchema={setGqlEditorSchema}
+        schema={gqlEditorSchema}
       />
     </div>
   );
